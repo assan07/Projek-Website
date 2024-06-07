@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  overflow-x: hidden;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  background-color: #6fc17c;
+  backdrop-filter: blur(50px);
+  justify-content: space-around;
+  padding: 18px 0;
+  align-items: center;
+  transition: 0.2s ease;
+}
+
+nav div img {
+  max-width: 50px;
+  position: inherit;
+}
+
+nav .logo {
+  font-family: "Pacifico", cursive;
+  display: flex;
+  align-items: center;
+  letter-spacing: 3px;
+  padding-left: 3px 0;
+  color: #0e4d1a;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: #0e4d1a;
+  text-decoration: none;
+  font-size: 1em;
+  border: 2px solid #0e4d1a;
+  border-radius: 50%;
+  position: initial;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  min-width: 13px;
+  backdrop-filter: brightness(88%);
+  margin-right: 17px;
+  margin-bottom: 0px;
+  box-shadow: 0 0 20px transparent;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+nav ul li a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #0e4d1a;
+}
+
+/* Hubberger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #0e4d1a;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+nav ul.active {
+  transform: translateX(0%);
+}
+
+/* side-bar */
+
+.container-side {
+  display: none;
+  flex-direction: row;
+  background-color: transparent;
+  border-radius: 5px;
+  width: 30vh;
+  top: 100px;
+  right: -50vh;
+  height: 23%;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.side-bar {
+  position: fixed;
+  background-color: rgb(43, 226, 119);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 5px 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.side-bar .hidden{
+  transform: translateX(-100%);
+}
+.container-side .side-bar ul {
+  list-style: none;
+  padding-top: 6px;
+}
+.container-side .side-bar ul li {
+  display: flex;
+  align-items: center;
+  padding-top: 4px;
+  border-radius: 3px;
+}
+.container-side .side-bar ul li a > i {
+  font-size: 12px;
+  display: flex;
+  position: relative;
+  align-items: start;
+  text-decoration: none;
+  justify-content: flex-start;
+  color: #0e4d1a;
+  padding: 2px;
+  width: 100%;
+}
+.container-side .side-bar ul li:hover {
+  background-color: #4ff86eb9;
+  width: 100%;
+  cursor: pointer;
+  transition: none;
+}
+
+.same-icon {
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  margin-left: 5px;
+}
+.container-side .side-bar ul li a > i > span {
+  font-size: 10px;
+  position: absolute;
+  text-align: start;
+  margin-left: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+  section {
+    flex-direction: column;
+  }
+  .nav-utama {
+    display: none;
+  }
+  .container-side {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 30vh;
+    position: fixed;
+    top: 100px;
+    right: -50vh;
+    height: 23%;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+/* ukuran mobile */
+
+@media screen and (max-width: 576px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .container-side {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 30vh;
+    position: fixed;
+    top: 100px;
+    right: -50vh;
+    height: 23%;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  section {
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    position: relative;
+  }
+}

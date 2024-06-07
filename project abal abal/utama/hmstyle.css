@@ -1,0 +1,61 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{  
+    background-image: url(/image/a.jpeg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Hero */
+section#hero{
+    height: calc(95vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: rgb(200, 243, 8);
+}
+
+#hero h1 {
+    font-size : 3rem;
+    margin-bottom: 1rem;
+
+}
+/* Add this CSS for positioning the image to the right */
+.right-image {
+    position: absolute;
+    top: 58%;
+    right: 80px;
+    transform: translateY(-50%);
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999; /* Ensure it's above other content */
+}
+
+
+/* Responsive Bracpoint */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+    .profile {
+        top: 20px; /* Adjust positioning for smaller screens */
+        right: 20px; /* Adjust positioning for smaller screens */
+    }
+}
+/* ukuran mobile */
+
+@media screen and (max-width: 576px) {
+    
+}
